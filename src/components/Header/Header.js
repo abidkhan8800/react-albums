@@ -9,12 +9,12 @@ function Header(props) {
   return (
       <>
       {showModal &&  <Modal setShowModal={setShowModal}><AddNewAlbum setShowModal={setShowModal} /></Modal>}
-      <Grid container alignItems={'center'} marginBottom="1em">
+      <Grid container alignItems={'center'} marginBottom="1em" justifyContent={'space-between'}>
         <Grid item>
         <h1 >React Albums Project Test</h1> 
         </Grid>
         <Grid item  flexGrow={1}></Grid>
-        <Grid item xs={12} sm={3} md={2} lg={1.5} >
+        <Grid item >
             <Button item variant='contained' onClick={() => setShowModal(prev => !prev)} color='success'>Add Album</Button>
         </Grid>
       </Grid>
