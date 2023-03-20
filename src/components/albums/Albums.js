@@ -14,11 +14,10 @@ function Albums(props) {
     useEffect(() => {
         getData();
     },[])
-    console.log(list)
    
     return (
-        <Grid style={{backgroundColor: "#eee", borderRadius: 10, paddingBottom: "0.5em" }} container  justifyContent={'center'} spacing={1}>
-            {list.length > 0 ? list.slice(0,10).map((item)=> {
+        <Grid style={{backgroundColor: "#eee", borderRadius: 10, padding: "0.5em" }} container  justifyContent={'center'} spacing={1}>
+            {list.length > 0 ? list.map((item)=> {
                 return <Album key={item.id} albumDetails={item} />
             }): <Grid item justifyContent={'center'}>Loading...</Grid>}
         </Grid>

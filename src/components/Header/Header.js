@@ -15,7 +15,7 @@ function Header(props) {
         </Grid>
         <Grid flexGrow={1}></Grid>
         <Grid paddingRight='5px'>
-            <Button item variant='contained' onClick={() => setShowModal(prev => !prev)}>Add Album</Button>
+            <Button item variant='contained' onClick={() => setShowModal(prev => !prev)} color='success'>Add Album</Button>
         </Grid>
       </Grid>
       </>
