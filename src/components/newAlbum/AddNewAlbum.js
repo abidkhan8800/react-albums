@@ -3,22 +3,38 @@ import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
 import Paper from '@mui/material/Paper'
 import TextField from '@mui/material/TextField'
-import {addData} from '../albums/action'
+import {addData, updateData} from '../albums/action'
 
 function AddNewAlbum(props) {
-    const {setShowModal} = props;
-    const [title, setTitle] = useState("");
+    const {setShowModal ,album} = props;
+    const [title, setTitle] = useState(album && album.title ? album.title : "");
     const handleCancelButton = () => {
         setShowModal(prev => !prev)
     }
 
     const addNewAlbum = async () => {
         const data = await addData({title: title, userId: 1});
-        console.log(data)
+        return data
+    }
+    const updateAlbum = async (id) =>{
+        const data = await updateData(id);
+        return data
     }
     const handleSubmitButton = async () => {
-        await addNewAlbum();
+        const result = await addNewAlbum();
+        console.log("result",result)
         setShowModal(prev => !prev)
+        if(result.id){
+            window.alert(`Album added successfully.`)
+        }
+    }
+    const handleUpdateButton = async (id) => {
+        const result = await updateAlbum(id);
+        console.log("result",result)
+        setShowModal(prev => !prev)
+        if(result.id){
+            window.alert(`Album updated successfully.`)
+        }
     }
     return (
             <Paper style={{padding: '1em', maxWidth:"400px"}}>
@@ -29,7 +45,7 @@ function AddNewAlbum(props) {
                             <TextField fullWidth id="outlined-basic" label="Album Name" variant="outlined" value={title} onChange={(e) => setTitle(e.target.value)}/>
                         </Grid>
                         <Grid item xs={12}  marginBottom={'1em'}>
-                            <TextField  fullWidth id="outlined-basic" label="User Id" value={1} disabled variant="outlined" />
+                            <TextField  fullWidth id="outlined-basic" label="User Id" value={album && album.id  ? album.id  : 1} disabled variant="outlined" />
                         </Grid>
                     </Grid>
                     <Grid item container xs={12}>
@@ -39,7 +55,7 @@ function AddNewAlbum(props) {
                         <Grid  flexGrow={1}>
                         </Grid>
                         <Grid item xs={3}  style={{textAlign: 'right'}}>
-                            <Button variant="contained" color='success'  onClick={handleSubmitButton}>submit</Button>
+                            <Button variant="contained" color='success'  onClick={ () =>  album && album.id ? handleUpdateButton(album.id) : handleSubmitButton()}>{album && album.id ? "update" : "submit"}</Button>
                         </Grid>
                     </Grid>
                 </Grid>
