@@ -56,7 +56,7 @@ function AddNewAlbum(props) {
                         <Grid  flexGrow={1}>
                         </Grid>
                         <Grid item xs={3}  style={{textAlign: 'right'}}>
-                            <Button variant="contained" color='success'  onClick={ () =>  album && album.id ? handleUpdateButton(album.id) : handleSubmitButton()}>{album && album.id ? "update" : "submit"}</Button>
+                            <Button variant="outlined" color='success'  onClick={ () =>  album && album.id ? handleUpdateButton(album.id) : handleSubmitButton()}>{album && album.id ? "update" : "submit"}</Button>
                         </Grid>
                     </Grid>
                 </Grid>

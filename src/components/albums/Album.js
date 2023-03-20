@@ -36,7 +36,7 @@ function Album(props) {
                     <Button variant='outlined' color='error' onClick={() => handleDeleteButton(id)}>
                         Delete
                     </Button>
-                    <Button variant='contained' color='success'  onClick={() => handleUpdateButton(id)}>
+                    <Button variant='outlined' color='success'  onClick={() => handleUpdateButton(id)}>
                         Update
                     </Button>
                 </Grid>
