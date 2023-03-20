@@ -14,7 +14,7 @@ function Header(props) {
         <h1 >React Albums Project Test</h1> 
         </Grid>
         <Grid item  flexGrow={1}></Grid>
-        <Grid item xs={12} sm={3} md={2} lg={2} >
+        <Grid item xs={12} sm={3} md={2} lg={1.5} >
             <Button item variant='contained' onClick={() => setShowModal(prev => !prev)} color='success'>Add Album</Button>
         </Grid>
       </Grid>
