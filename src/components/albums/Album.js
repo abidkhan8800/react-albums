@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import Grid from'@mui/material/Grid';
 import Paper from '@mui/material/Paper'
 import Button from '@mui/material/Button'
-import {deleteData} from './action'
+import {deleteData} from '../../api'
 import Modal from '../modal/Modal'
 import AddNewAlbum from '../newAlbum/AddNewAlbum';
 import { toast } from 'react-toastify';

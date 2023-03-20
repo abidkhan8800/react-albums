@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
 import Paper from '@mui/material/Paper'
 import TextField from '@mui/material/TextField'
-import {addData, updateData} from '../albums/action'
+import {addData, updateData} from '../../api'
 import {toast} from 'react-toastify'
 
 function AddNewAlbum(props) {

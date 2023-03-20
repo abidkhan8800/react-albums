@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Album from './Album'
-import { getList } from './action';
+import { getList } from '../../api';
 import Grid from '@mui/material/Grid';
 
 
