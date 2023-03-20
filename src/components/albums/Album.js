@@ -23,15 +23,15 @@ function Album(props) {
         <>
         <Grid item container flexDirection={'column'} spacing={1} xs={12} sm={4} md={3} lg={3}>
             <Paper style={{margin: "0.5em",padding: "0.8em 0.3em"}}>
-               <Grid container flexDirection={'column'} alignItems={'space-between'}>
+               <Grid container flexDirection={'column'} alignItems={'space-between'} padding='0.5em'>
                 <Grid item justifyContent={'center'} style={{height: "120px", textAlign:'center'}}>
-                    <Grid> 
-                        <p>Title: {title}</p>
-                        <span>Id: {id}</span>
+                    <Grid style={{textAlign: 'left'}}> 
+                        <p> <strong>Id:</strong> {id}</p>
+                        <p> <strong>Title: </strong>{title}</p>
                         {/* <span>UserID: {userId}</span> */}
                     </Grid>
                 </Grid>
-                <Grid item container justifyContent={'space-evenly'}>
+                <Grid item container justifyContent={'space-between'}>
                     <Button variant='outlined' color='error' onClick={() => handleDeleteButton(id)}>
                         Delete
                     </Button>
