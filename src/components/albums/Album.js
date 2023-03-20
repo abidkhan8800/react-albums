@@ -5,6 +5,7 @@ import Button from '@mui/material/Button'
 import {deleteData} from './action'
 import Modal from '../modal/Modal'
 import AddNewAlbum from '../newAlbum/AddNewAlbum';
+import { toast } from 'react-toastify';
 
 function Album(props) {
     const {id, title} = props.albumDetails;
@@ -12,7 +13,7 @@ function Album(props) {
     const handleDeleteButton = async (id) => {
         const result = await deleteData(id)
         console.log(result)
-        window.alert('Album deleted successfully.')
+        toast("Album deleted successfully.");
     }
 
     const handleUpdateButton = async (id) => {

@@ -4,6 +4,7 @@ import Button from '@mui/material/Button'
 import Paper from '@mui/material/Paper'
 import TextField from '@mui/material/TextField'
 import {addData, updateData} from '../albums/action'
+import {toast} from 'react-toastify'
 
 function AddNewAlbum(props) {
     const {setShowModal ,album} = props;
@@ -25,7 +26,7 @@ function AddNewAlbum(props) {
         console.log("result",result)
         setShowModal(prev => !prev)
         if(result.id){
-            window.alert(`Album added successfully.`)
+            toast(`Album added successfully.`)
         }
     }
     const handleUpdateButton = async (id) => {
@@ -33,7 +34,7 @@ function AddNewAlbum(props) {
         console.log("result",result)
         setShowModal(prev => !prev)
         if(result.id){
-            window.alert(`Album updated successfully.`)
+            toast("Album updated successfully.")
         }
     }
     return (
