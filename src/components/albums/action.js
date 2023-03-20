@@ -1,4 +1,4 @@
-const getList = async () => {
+export const getList = async () => {
     try{
         let res = await fetch("https://jsonplaceholder.typicode.com/albums");
         let data = await res.json()
@@ -9,7 +9,7 @@ const getList = async () => {
     }
 }
 
-const addData = async (request) => {
+export const addData = async (request) => {
     console.log(request);
     const config ={
         method: 'POST'
@@ -27,8 +27,4 @@ const addData = async (request) => {
         console.log("Error in fetching data", err)
 
     }
-}
-
-module.exports = {
-    getList, addData
 }
