@@ -2,9 +2,14 @@ import React from 'react';
 import Grid from'@mui/material/Grid';
 import Paper from '@mui/material/Paper'
 import Button from '@mui/material/Button'
+import {deleteData} from './action'
 
 function Album(props) {
     const {userId, id, title} = props.albumDetails;
+    const handleDeleteButton = async (id) => {
+        const result = await deleteData(id)
+        console.log(result)
+    }
 
     return (
         <Grid item container flexDirection={'column'} spacing={1} xs={12} sm={4} md={3} lg={3}>
@@ -18,7 +23,7 @@ function Album(props) {
                     </Grid>
                 </Grid>
                 <Grid item container justifyContent={'space-evenly'}>
-                    <Button variant='outlined' color='error'>
+                    <Button variant='outlined' color='error' onClick={() => handleDeleteButton(id)}>
                         Delete
                     </Button>
                     <Button variant='contained' color='success'>

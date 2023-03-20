@@ -28,3 +28,20 @@ export const addData = async (request) => {
 
     }
 }
+
+export const deleteData = async (userId) => {
+    const config ={
+        method: 'DELETE'
+    }
+    config.body = {
+        userId: userId,
+    }
+    try{
+        let res = await fetch(`https://jsonplaceholder.typicode.com/albums/${userId}`, config);
+        let data = await res.json()
+        return data
+    }catch(err){
+        console.log("Error in fetching data", err)
+
+    }
+}
