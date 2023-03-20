@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/https;//abidkhan8800.github.io/react-albums/static/css/main.964fdded.css",
-    "main.js": "/https;//abidkhan8800.github.io/react-albums/static/js/main.6bb8463f.js",
+    "main.js": "/https;//abidkhan8800.github.io/react-albums/static/js/main.3faaf0a8.js",
     "index.html": "/https;//abidkhan8800.github.io/react-albums/index.html",
     "main.964fdded.css.map": "/https;//abidkhan8800.github.io/react-albums/static/css/main.964fdded.css.map",
-    "main.6bb8463f.js.map": "/https;//abidkhan8800.github.io/react-albums/static/js/main.6bb8463f.js.map"
+    "main.3faaf0a8.js.map": "/https;//abidkhan8800.github.io/react-albums/static/js/main.3faaf0a8.js.map"
   },
   "entrypoints": [
     "static/css/main.964fdded.css",
-    "static/js/main.6bb8463f.js"
+    "static/js/main.3faaf0a8.js"
   ]
 }
